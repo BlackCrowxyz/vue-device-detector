@@ -35,20 +35,26 @@ class DeviceDetector {
     this.iphoneX =
       this.iphone &&
       devicePixelRatio === 3 &&
-      window.screen.width === 375 &&
-      window.screen.height === 812;
+      window.screen.width > 374 &&
+      window.screen.width < 376 &&
+      window.screen.height < 813 &&
+      window.screen.height > 811;
 
     this.iPhoneXR =
       this.iphone &&
       devicePixelRatio === 2 &&
-      window.screen.width === 414 &&
-      window.screen.height === 896;
+      window.screen.width > 413 &&
+      window.screen.width < 415 &&
+      window.screen.height > 895 &&
+      window.screen.height < 897;
 
     this.iPhoneXSMax =
       this.iphone &&
       devicePixelRatio === 3 &&
-      window.screen.width === 414 &&
-      window.screen.height === 896;
+      window.screen.width > 413 &&
+      window.screen.width < 415 &&
+      window.screen.height > 895 &&
+      window.screen.height < 897;
 
     this.ios = this.iphone || this.ipod || this.ipad;
     this.android = !this.windows && this.find("android");
